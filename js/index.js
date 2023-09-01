@@ -1,6 +1,8 @@
 function appStart() {
   const handleKeydown = (event) => {
-    console.log("키가 눌렸습니다!", event);
+    const key = event.key;
+    const keyCode = event.keyCode;
+    document.querySelector(".board-block[data-index='00']");
   };
 
   window.addEventListener("keydown", handleKeydown);
