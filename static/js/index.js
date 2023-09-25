@@ -40,10 +40,19 @@ function appStart() {
       if (입력한_글자 === 정답_글자) {
         맞은_갯수 += 1;
         block.style.background = "#6aaa64";
+        block.style.animation = "bounce_o 0.5s ease-out";
+        block.style.animationFillMode = "both";
+        (block.style.animationIterationCount = "1"),
+          (block.style.animationDirection = "alternate");
       } else if (정답.includes(입력한_글자)) block.style.background = "#c9b458";
-      else block.style.background = "#787c7e";
-
-      block.style.color = "white";
+      else {
+        block.style.background = "#787c7e";
+        block.style.color = "white";
+        block.style.animation = "bounce_x 0.5s ease-out";
+        block.style.animationFillMode = "both";
+        (block.style.animationIterationCount = "1"),
+          (block.style.animationDirection = "alternate");
+      }
     }
 
     if (맞은_갯수 === 5) gameover();
@@ -80,6 +89,7 @@ function appStart() {
       //   index++;
     }
   };
+
   const startTimer = () => {
     const 시작_시간 = new Date();
 
